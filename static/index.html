@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Oberon</title>
+  <link rel="icon" href="/oberon.png">
+  <link rel="stylesheet" href="/app.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div class="workspace">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="/oberon.png" alt="">
+        <strong>OBERON</strong>
+      </div>
+      <nav class="navigation" aria-label="Разделы">
+        <button type="button" data-nav="home" aria-current="page"><span aria-hidden="true">◫</span>Обзор</button>
+        <button type="button" data-nav="projects"><span aria-hidden="true">▤</span>Проекты</button>
+        <button type="button" data-nav="training"><span aria-hidden="true">◇</span>Обучение</button>
+        <button type="button" data-nav="settings"><span aria-hidden="true">⚙</span>Настройки</button>
+      </nav>
+      <div class="sidebar-footer">
+        <span class="status-light" aria-hidden="true"></span>
+        <span>Локальное пространство</span>
+      </div>
+    </aside>
+    <main>
+      <header class="topbar">
+        <span id="location">Обзор</span>
+        <span id="active-model" class="model-status" aria-live="polite"></span>
+      </header>
+      <section id="job-progress" class="job-progress" aria-live="polite" hidden>
+        <div><strong id="job-message">Подготовка проекта</strong><small id="job-detail" class="fine"></small><progress id="job-bar"></progress></div>
+        <button type="button" class="button small" id="job-cancel">Отменить</button>
+        <button type="button" class="button small" id="job-result" hidden>Открыть результат</button>
+        <button type="button" class="button small" id="job-dismiss" hidden>Закрыть</button>
+      </section>
+      <div id="content" class="content" aria-busy="true">
+        <p class="empty">Открываем рабочее пространство…</p>
+      </div>
+    </main>
+  </div>
+  <dialog id="dialog"></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
